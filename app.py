@@ -1,9 +1,4 @@
-from ppeDetection.logger import logging
-from ppeDetection.exception import AppException
-import sys
+from ppeDetection.pipeline.training_pipeline import TrainPipeline
 
-try:
-    a = 3 / "s"
-
-except Exception as e:
-    raise AppException(e, sys)
+obj = TrainPipeline()
+obj.run_pipeline()
