@@ -5,7 +5,8 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta http-equiv="X-UA-Compatible" content="ie=edge">
-	<title>Web App</title>
+	<title>PPE Detection Flask Application</title>
+	<link rel="icon" type="image/x-icon" href="static/assets/images.ico" />
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
 		integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 	<style>
@@ -164,38 +165,20 @@
 			margin-right: 30px;
 			margin-bottom: 30px;
 		}
+
+		.custom-container {
+			background-color: #FF7E24;
+			
+		  }
+		  
 	</style>
 </head>
 
 <body>
-	<!-- <div class="main container">
-		<section class="iupload">
-			<h3 class="text-center py-4">Object Detection Using TFOD</h3>
-			<div class="row">
-				<div class="img-part col-md-6">
-					<div class="image-part">
-						<video autoplay id="video"
-							poster="https://img.freepik.com/free-vector/group-young-people-posing-photo_52683-18824.jpg?size=338&ext=jpg"></video>
-						<img src="" id="photo">
-						<canvas style="display:none;" id="canvas"></canvas>
-					</div>
-				</div>
-				<div class="col-md-6 col-xs-12 right-part">
-					<h5 class="mb-2">
-						Prediction Results
-					</h5>
-					<div class="row">
-						<div class="res-part2 col-md-2 col-xs-12"></div>
-					</div>
-				</div>
-			</div>
-		</section>
 
-		
-	</div> -->
 
 	<!-- Header -->
-<header class="bg-primary text-center py-5 mb-4">
+<header class="bg-primary text-center py-2 mb-4">
 	<div class="container">
 	  <h1 class="font-weight-light text-white">PPE-Detection with YOLOv8</h1>
 	</div>
@@ -223,16 +206,12 @@
 	  <!-- Team Member 1 -->
 	  <div class="col-xl-6 col-md-6 col-sm-6 mb-6">
 		<div class="card border-0 shadow upload-image ">
-		  <!-- <img src="https://source.unsplash.com/TMgQMXoglsM/500x350" class="card-img-top" alt="..."> -->
-		  	<video autoplay id="video" poster="https://img.freepik.com/free-vector/group-young-people-posing-photo_52683-18824.jpg?size=338&ext=jpg"></video>
+		  	<video autoplay id="video" poster="https://img.freepik.com/free-vector/flat-personal-protective-equipment-poster-with-worker-wearing-respirator-hardhat-ear-plugs-glasses-protective-clothing-vector-illustration_1284-74848.jpg?size=626&ext=jpg&ga=GA1.1.1600671343.1710225347&semt=sph"></video>
 			<img src="" class="" id="photo">
 			<canvas style="display:none;" id="canvas"></canvas>
-		  <!-- <div class="card-body text-center">
-			<h5 class="card-title mb-0">Team Member</h5>
-		  </div> -->
 		</div>
 	  </div>
-	  <!-- Team Member 2 -->
+
 	  <div class="col-xl-6 col-md-6 col-sm-6 mb-6">
 		<div class="card border-0 shadow res-part2">
 		  <div class="card-body text-center">
@@ -241,15 +220,7 @@
 		</div>
 	  </div>
 	</div>
-	<!-- /.row -->
-
-  
   </div>
-  <!-- /.container -->
-
-	<img class="logo"
-		src="https://apparel.ineuronvision.com/static/logo.png" />
-
 
 	<div id="loading">
 		<div class="loader"></div>
@@ -347,5 +318,4 @@
 		});
 	</script>
 </body>
-
 </html>

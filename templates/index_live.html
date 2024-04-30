@@ -1,11 +1,182 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Live PPE Detection</title>
-</head>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>PPE Detection Flask Application</title>
+        <link rel="icon" type="image/x-icon" href="static/assets/images.ico" />
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+            integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+        <style>
+    
+            .iupload h3 {
+                color: #1b2d6b;
+                font-size: 30px;
+                font-weight: 700;
+            }
+    
+            .img-part-1 {
+                height: 300px;
+                width: 300px;
+                margin: 0px auto;
+            }
+    
+            .image-part {
+                height: 300px;
+                width: 300px;
+                border: 1px solid #1b2d6b;
+            }
+    
+            .image-part img {
+                /* position: absolute; */
+                height: 300px;
+                width: 300px;
+                display: none;
+                padding: 5px;
+            }
+    
+            .image-part #video {
+                /* display: block; */
+                height: 300px;
+                width: 300px;
+                padding: 5px;
+            }
+    
+            .res-part {
+                /* margin-left: 20px; */
+                height: 400px;
+                width: 100%;
+                padding: 5px;
+                margin: 0px auto;
+                overflow: auto;
+            }
+    
+            .upload-image {
+                /* margin-left: 20px; */
+                height: 400px;
+                width: auto;;
+                padding: 5px;
+                margin: 0px auto;
+                overflow: auto;
+            }
+    
+            .resp-img {
+                height: 400px;
+                width: auto;
+                margin: 0px auto;
+            }
+    
+            .jsonRes {
+                margin-left: 30px;
+            }
+    
+            #send {
+                cursor: pointer;
+            }
+    
+            .btn-part {
+                width: 325px;
+            }
+    
+            textarea,
+            select,
+            .form-control,
+            .custom-select,
+            button.btn,
+            .btn-primary,
+            input[type="text"],
+            input[type="url"],
+            .uneditable-input {
+                border: 1px solid #363e75;
+                outline: 0 !important;
+                border-radius: 0px;
+                box-shadow: none;
+                -webkit-box-shadow: none;
+                -moz-box-shadow: none;
+                -moz-transition: none;
+                -webkit-transition: none;
+            }
+    
+            textarea:focus,
+            select:focus,
+            .form-control:focus,
+            .btn:focus,
+            .btn-primary:focus,
+            .custom-select:focus,
+            input[type="text"]:focus,
+            .uneditable-input:focus {
+                border: 1px solid #007bff;
+                outline: 0 !important;
+                border-radius: 0px;
+                box-shadow: none;
+                -webkit-box-shadow: none;
+                -moz-box-shadow: none;
+                -moz-transition: none;
+                -webkit-transition: none;
+            }
+    
+            #loading {
+                position: fixed;
+                left: 0px;
+                top: 0px;
+                width: 100%;
+                height: 100%;
+                z-index: 9999999999;
+                overflow: hidden;
+                background: rgba(255, 255, 255, 0.7);
+            }
+    
+            .loader {
+                border: 8px solid #f3f3f3;
+                border-top: 8px solid #363e75;
+                border-radius: 50%;
+                width: 60px;
+                height: 60px;
+                left: 50%;
+                margin-left: -4em;
+                display: block;
+                animation: spin 2s linear infinite;
+            }
+    
+            .loader,
+            .loader:after {
+                display: block;
+                position: absolute;
+                top: 50%;
+                margin-top: -4.05em;
+            }
+    
+            @keyframes spin {
+                0% {
+                    transform: rotate(0deg);
+                }
+    
+                100% {
+                    transform: rotate(360deg);
+                }
+            }
+    
+            .logo {
+                position: absolute;
+                right: 0px;
+                bottom: 0px;
+                margin-right: 30px;
+                margin-bottom: 30px;
+            }
+    
+            .custom-container {
+                background-color: #FF7E24;
+                
+              }
+              
+        </style>
+    </head>
 <body>
-    <h1>PPE Detection Live Stream</h1>
-    <img src="{{ url_for('video_feed') }}">
+ <!-- Header -->
+<header class="bg-primary text-center py-2 mb-4">
+	<div class="container">
+	  <h1 class="font-weight-light text-white">Live PPE-Detection with YOLOv8</h1>
+	</div>
+  </header>
 </head>
