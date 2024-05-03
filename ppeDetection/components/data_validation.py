@@ -54,7 +54,7 @@ class DataValidation:
             )
             
             logging.info("Exited initiate_data_validation method of DataValidation class")
-            logging.info(f"Data Validation aartifact: {data_validation_artifact}")
+            logging.info(f"Data Validation artifact: {data_validation_artifact}")
             
             if status:
                 shutil.copy(self.data_ingestion_artifact.data_zip_file_path, os.getcwd())
