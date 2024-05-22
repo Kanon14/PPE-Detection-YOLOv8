@@ -58,3 +58,7 @@ python live-ppe-detect.py
 ```bash
 open http://localhost:<port>
 ```
+3. To start webcam detection:
+```bash
+http://localhost:<port>/video_feed
+```
