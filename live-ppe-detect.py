@@ -21,13 +21,14 @@ classNames = ['Excavator', 'Gloves', 'Hardhat', 'Ladder', 'Mask', 'NO-Hardhat', 
 
 def get_color(class_name, confidence):
     if confidence > 0.5:
+        # Note: OpenCV or cvzone utilize BGR instead of RGB
         if class_name in ["Hardhat", "Mask", "Safety Vest", "Gloves"]:
-            return (0, 255, 0)  # Green
+            return (0, 255, 0)  # Green for correctly detected PPE
         elif class_name in ["NO-Hardhat", "NO-Mask", "NO-Safety Vest"]:
-            return (0, 0, 255)  # Red
+            return (0, 0, 255)  # Red for absent PPE 
         elif class_name == "Person":
-            return (255, 87, 51)  # Blueish
-    return (255, 0, 0)  # Default to blue if low confidence or other classes
+            return (255, 255, 0)  # Cyan for person
+    return (0, 0, 255)  # Default to red if low confidence or other classes
 
 def gen_frames():
 
